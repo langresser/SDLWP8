@@ -1,0 +1,4 @@
+/.hg/
+Debug/
+/VisualC/*.suo
+/VisualC/tests/testsprite2/*.user
