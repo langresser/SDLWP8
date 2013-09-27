@@ -1027,13 +1027,8 @@ open_audio_device(const char *devname, int iscapture,
         /* Start the audio thread */
         char name[64];
         SDL_snprintf(name, sizeof (name), "SDLAudioDev%d", (int) (id + 1));
-/* !!! FIXME: this is nasty. */
-#if defined(__WIN32__) && !defined(HAVE_LIBC)
-#undef SDL_CreateThread
-        device->thread = SDL_CreateThread(SDL_RunAudio, name, device, NULL, NULL);
-#else
         device->thread = SDL_CreateThread(SDL_RunAudio, name, device);
-#endif
+
         if (device->thread == NULL) {
             SDL_CloseAudioDevice(id + 1);
             SDL_SetError("Couldn't create audio thread");

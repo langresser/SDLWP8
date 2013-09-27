@@ -425,13 +425,8 @@ SDL_SYS_HapticOpenFromXInput(SDL_Haptic * haptic, Uint8 userid)
     }
 
     SDL_snprintf(threadName, sizeof (threadName), "SDLXInputDev%d", (int) userid);
-
-#if defined(__WIN32__) && !defined(HAVE_LIBC)  /* !!! FIXME: this is nasty. */
-    #undef SDL_CreateThread
-    haptic->hwdata->thread = SDL_CreateThread(SDL_RunXInputHaptic, threadName, haptic->hwdata, NULL, NULL);
-#else
     haptic->hwdata->thread = SDL_CreateThread(SDL_RunXInputHaptic, threadName, haptic->hwdata);
-#endif
+
     if (haptic->hwdata->thread == NULL) {
         SDL_DestroyMutex(haptic->hwdata->mutex);
         SDL_free(haptic->effects);
