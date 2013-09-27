@@ -77,6 +77,7 @@ typedef unsigned int uintptr_t;
 #endif
 
 /* This is disabled by default to avoid C runtime dependencies and manifest requirements */
+#define HAVE_LIBC
 #ifdef HAVE_LIBC
 /* Useful headers */
 #define HAVE_STDIO_H 1
@@ -119,7 +120,7 @@ typedef unsigned int uintptr_t;
 #define HAVE__STRICMP 1
 #define HAVE__STRNICMP 1
 #define HAVE_SSCANF 1
-#define HAVE_M_PI 1
+//#define HAVE_M_PI 1
 #define HAVE_ATAN 1
 #define HAVE_ATAN2 1
 #define HAVE_CEIL 1
