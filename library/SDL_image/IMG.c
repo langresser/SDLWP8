@@ -39,7 +39,7 @@ static struct {
 //     { "TGA", NULL,      IMG_LoadTGA_RW },
 //     { "CUR", IMG_isCUR, IMG_LoadCUR_RW },
 //     { "ICO", IMG_isICO, IMG_LoadICO_RW },
-//     { "BMP", IMG_isBMP, IMG_LoadBMP_RW },
+     { "BMP", IMG_isBMP, IMG_LoadBMP_RW },
 //     { "GIF", IMG_isGIF, IMG_LoadGIF_RW },
 //     { "JPG", IMG_isJPG, IMG_LoadJPG_RW },
 //     { "LBM", IMG_isLBM, IMG_LoadLBM_RW },
